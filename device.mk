@@ -82,6 +82,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libvulkan
 
+# Doze
+PRODUCT_PACKAGES += \
+    XiaomiDoze
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
