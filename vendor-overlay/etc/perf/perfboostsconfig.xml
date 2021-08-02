@@ -99,12 +99,12 @@
 
        <!-- Type="6", Game Launch boost -->
        <Config
-           Id="0x00001081" Type="6" Enable="true" Timeout="2500" Target="bengal"
+           Id="0x00001081" Type="6" Enable="true" Timeout="2000" Target="bengal"
            Resources="0x40408000, 0x63, 0x40C74000, 0xF0,
                       0x40C68040, 60, 0x40C68050, 60,
                       0x40C68060, 60, 0x40C68070, 60,
                       0x40C58000, 65, 0x40C54000, 71,
-                      0x40800000, 1612,
+                      0x40800000, 1056,
                       0x41448000, 20000"/>
        <Config
            Id="0x00001081" Type="6" Enable="true" Timeout="2000" Target="scuba"
@@ -117,8 +117,8 @@
         <!-- CPUBOOST_MIN_FREQ BIG Core resource opcode, value-->
         <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
         <Config
-            Id="0x00001083" Enable="true" Timeout="500" Target="bengal"
-            Resources="0x40804000, 2016, 0x40804100, 1804, 0x40800000, 1804, 0x40800100, 1804" />
+            Id="0x00001083" Enable="true" Timeout="400" Target="bengal"
+            Resources="0x40804000, 2016, 0x40804100, 1804, 0x40800000, 2208, 0x40800100, 1708" />
         <Config
             Id="0x00001083" Enable="true" Timeout="400" Target="scuba"
             Resources="0x40804000, 2016, 0x40800000, 2208" />
@@ -132,7 +132,7 @@
         <!-- Type="1", Vertical Scroll boost -->
         <Config
             Id="0x00001080" Type="1" Enable="true" Target="bengal"
-            Resources="0x41800000, 0x26, 0x40800000, 1536, 0x40800100, 1612, 0x40C00000, 2" />
+            Resources="0x41800000, 0x26, 0x40800000, 1800, 0x40800100, 1800, 0x40C00000, 2" />
         <Config
             Id="0x00001080" Type="1" Enable="true" Target="scuba"
             Resources="0x41800000, 0x8c, 0x40800000, 1800" />
@@ -146,7 +146,7 @@
         <!-- Type="2", Horizontal Scroll boost -->
         <Config
             Id="0x00001080" Type="2" Enable="true" Target="bengal"
-            Resources="0x41800000, 0x26, 0x40800000, 1536, 0x40800100, 1612, 0x40C00000, 2" />
+            Resources="0x41800000, 0x26, 0x40800000, 1800, 0x40800100, 1800, 0x40C00000, 2" />
         <Config
             Id="0x00001080" Type="2" Enable="true" Target="scuba"
             Resources="0x41800000, 0x26, 0x40800000, 1800" />
@@ -160,7 +160,7 @@
         <!-- Type="4", Pre-Fling boost -->
         <Config
             Id="0x00001080" Type="4" Enable="true" Timeout="80" Target="bengal"
-            Resources="0x41800000, 0x26, 0x40800000, 1536, 0x40800100, 1612, 0x40C00000, 2" />
+            Resources="0x41800000, 0x26, 0x40800000, 1500, 0x40800100, 1500, 0x40C00000, 2" />
         <Config
             Id="0x00001080" Type="4" Enable="true" Timeout="80" Target="scuba"
             Resources="0x41800000, 0x26, 0x40800000, 1500" />
@@ -225,8 +225,8 @@
         <!-- Type="", Rotation animation boost -->
 
         <Config
-            Id="0x00001090" Enable="true" Timeout="1500" Target="bengal"
-            Resources="0x40800100, 1804, 0x4280C000, 950" />
+            Id="0x00001090" Enable="true" Timeout="1000" Target="bengal"
+            Resources="0x40800100, 1000, 0x4280C000, 950" />
         <Config
             Id="0x00001090" Enable="true" Timeout="1000" Target="scuba"
             Resources="0x40800000, 1000, 0x4280C000, 950" />
@@ -238,7 +238,7 @@
         <!-- Type="1", Drag boost -->
          <Config
              Id="0x00001087" Type="1" Enable="true" Timeout="0" Target="bengal"
-             Resources="0x40800000, 1401, 0x40800100, 1612" />
+             Resources="0x40800000, 1056, 0x40800100, 1017" />
          <Config
              Id="0x00001087" Type="1" Enable="true" Timeout="0" Target="scuba"
              Resources="0x40800000, 1056" />
