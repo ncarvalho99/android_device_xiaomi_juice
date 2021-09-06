@@ -61,10 +61,6 @@ PRODUCT_PACKAGES += \
  PRODUCT_PACKAGES += \
     BluetoothQti
 
-# Camera
-PRODUCT_PACKAGES += \
-    Snap
-
 # Codec2 modules
 PRODUCT_PACKAGES += \
     com.android.media.swcodec \
