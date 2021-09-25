@@ -783,4 +783,10 @@
     </string-array>
     <!-- Do not translate. Default access point SSID used for tethering -->
     <string name="wifi_tether_configure_ssid_default" translatable="false">Xiaomi-Juice</string>
+
+    <!-- Adaptive Charging sysfs node & value for suspend/resume charging-->
+    <string name="config_adaptiveChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
+    <string name="config_adaptiveChargingSupspendValue" translatable="false">1</string>
+    <string name="config_adaptiveChargingResumeValue" translatable="false">0</string>
+
 </resources>
