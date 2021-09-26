@@ -150,6 +150,7 @@ PRODUCT_PACKAGES += \
     CellBroadcastReceiverResCommon \
     FrameworksResCommon \
     FrameworksResTarget \
+    NotchBarKiller \
     SystemUIResCommon \
     TelecommResCommon \
     TelephonyResCommon \
