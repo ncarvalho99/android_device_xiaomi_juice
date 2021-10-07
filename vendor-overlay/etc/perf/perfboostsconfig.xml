@@ -17,6 +17,8 @@
     <PerfBoost>
 
     <!--app lauch boost-->
+        <!-- MIN_ONLINE_CPU_CLUSTER_LITTLE resource opcode, value-->
+        <!-- MIN_ONLINE_CPU_CLUSTER_BIG resource opcode, value-->
         <!-- SCHEDBOOST resource opcode, value-->
         <!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
         <!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode, value-->
@@ -26,13 +28,15 @@
         <!-- Type="1", main launch boost of 3sec -->
         <Config
             Id="0x00001081" Type="1" Enable="true" Timeout="3000" Target="bengal"
-            Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 0xFFF,
+            Resources="0x41000100, 0x4, 0x41000000, 0x4, 0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 0xFFF,
                        0x40800100, 0xFFF, 0x4280C000, 950, 0x41800000, 0xFF" />
         <Config
             Id="0x00001081" Type="1" Enable="true" Timeout="2000" Target="scuba"
             Resources="0x40804000, 0xFFF, 0x40800000, 1500" />
 
     <!--resume boost-->
+        <!-- MIN_ONLINE_CPU_CLUSTER_LITTLE resource opcode, value-->
+        <!-- MIN_ONLINE_CPU_CLUSTER_BIG resource opcode, value-->
         <!-- SCHEDBOOST resource opcode, value-->
         <!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
         <!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode, value-->
@@ -41,7 +45,7 @@
 
         <Config
             Id="0x00001082" Type="1" Enable="true" Timeout="600" Target="bengal"
-            Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 0xFFF,
+            Resources="0x41000100, 0x4, 0x41000000, 0x4, 0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 0xFFF,
                        0x40800100, 0xFFF, 0x4280C000, 950, 0x41800000, 0xFF" />
 
     <!--app lauch boost (disabling packing)-->
@@ -124,6 +128,7 @@
             Resources="0x40804000, 2016, 0x40800000, 2208" />
 
     <!--Vertical Scroll boost-->
+        <!-- MIN_ONLINE_CPU_CLUSTER_BIG resource opcode, value-->
         <!-- CPUBW_MIN_FREQ resource opcode, value-->
         <!-- CPUBOOST_MIN_FREQ BIG CORE resource opcode, value -->
         <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value -->
@@ -132,12 +137,14 @@
         <!-- Type="1", Vertical Scroll boost -->
         <Config
             Id="0x00001080" Type="1" Enable="true" Target="bengal"
-            Resources="0x41800000, 0x26, 0x40800000, 1800, 0x40800100, 1800, 0x40C00000, 2" />
+            Resources="0x41000000, 0x3, 0x41800000, 0x26, 0x40800000, 1800, 0x40800100, 1800, 0x40C00000, 2" />
         <Config
             Id="0x00001080" Type="1" Enable="true" Target="scuba"
             Resources="0x41800000, 0x8c, 0x40800000, 1800" />
 
     <!--Horizontal Scroll boost-->
+        <!-- MIN_ONLINE_CPU_CLUSTER_LITTLE resource opcode, value-->
+        <!-- MIN_ONLINE_CPU_CLUSTER_BIG resource opcode, value-->
         <!-- CPUBW_MIN_FREQ resource opcode, value-->
         <!-- CPUBOOST_MIN_FREQ BIG CORE resource opcode, value -->
         <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value -->
@@ -146,12 +153,13 @@
         <!-- Type="2", Horizontal Scroll boost -->
         <Config
             Id="0x00001080" Type="2" Enable="true" Target="bengal"
-            Resources="0x41800000, 0x26, 0x40800000, 1800, 0x40800100, 1800, 0x40C00000, 2" />
+            Resources="0x41000100, 0x4, 0x41000000, 0x3, 0x41800000, 0x26, 0x40800000, 1800, 0x40800100, 1800, 0x40C00000, 2" />
         <Config
             Id="0x00001080" Type="2" Enable="true" Target="scuba"
             Resources="0x41800000, 0x26, 0x40800000, 1800" />
 
     <!--Pre-Fling boost-->
+        <!-- MIN_ONLINE_CPU_CLUSTER_BIG resource opcode, value-->
         <!-- CPUBW_MIN_FREQ resource opcode, value-->
         <!-- CPUBOOST_MIN_FREQ BIG CORE resource opcode, value -->
         <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value -->
@@ -160,7 +168,7 @@
         <!-- Type="4", Pre-Fling boost -->
         <Config
             Id="0x00001080" Type="4" Enable="true" Timeout="80" Target="bengal"
-            Resources="0x41800000, 0x26, 0x40800000, 1500, 0x40800100, 1500, 0x40C00000, 2" />
+            Resources="0x41000000, 0x3, 0x41800000, 0x26, 0x40800000, 1500, 0x40800100, 1500, 0x40C00000, 2" />
         <Config
             Id="0x00001080" Type="4" Enable="true" Timeout="80" Target="scuba"
             Resources="0x41800000, 0x26, 0x40800000, 1500" />
@@ -204,6 +212,8 @@
             Resources="0x40804000, 0xFFF, 0x40800000,0xFFF" />
 
     <!--Rotation latency boost-->
+        <!-- MIN_ONLINE_CPU_CLUSTER_LITTLE resource opcode, value-->
+        <!-- MIN_ONLINE_CPU_CLUSTER_BIG resource opcode, value-->
         <!-- SCHEDBOOST resource opcode, value-->
         <!-- CPUBOOST_MAX_FREQ BIG Core resource opcode, value-->
         <!-- CPUBOOST_MAX_FREQ LITTLE Core resource opcode, value-->
@@ -213,7 +223,7 @@
 
         <Config
             Id="0x00001089" Enable="true" Timeout="1500" Target="bengal"
-            Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000,0xFFF,
+            Resources="0x41000100, 0x4, 0x41000000, 0x4, 0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000,0xFFF,
                        0x40800100,0xFFF" />
         <Config
             Id="0x00001089" Enable="true" Timeout="1500" Target="scuba"
