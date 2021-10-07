@@ -19,7 +19,7 @@ property Name is called. -->
 
                 <!--Vendor Properties -->
                 <Prop Name="vendor.debug.enable.lm" Value="true" />
-                <Prop Name="vendor.iop.enable_uxe" Value="0" />
+                <Prop Name="vendor.iop.enable_uxe" Value="1" />
                 <Prop Name="ro.lmk.enable_preferred_apps" Value="true" />
                 <Prop Name="vendor.enable.prefetch" Value="false" />
                 <Prop Name="vendor.iop.enable_prefetch_ofr" Value="0" />
@@ -43,6 +43,7 @@ property Name is called. -->
                 <Prop Name="ro.lmk.enhance_batch_kill" Value="false" />
                 <Prop Name="ro.lmk.enable_userspace_lmk" Value="true" />
                 <Prop Name="vendor.perf.gestureflingboost.enable" Value="true" />
+                <Prop Name="ro.vendor.qti.sys.fw.bg_apps_limit" Value="60" />
                 <Prop Name="ro.vendor.at_library" Value="libqti-at.so" />
                 <Prop Name="ro.lmk.thrashing_limit_pct_dup" Value="30" />
                 <Prop Name="ro.lmk.kill_timeout_ms_dup" Value="100" />
