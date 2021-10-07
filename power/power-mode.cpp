@@ -48,6 +48,7 @@ int open_ts_input() {
 							strcmp(name, "ft5x46") == 0 ||
 							strcmp(name, "goodix_ts") == 0 ||
 							strcmp(name, "NVTCapacitiveTouchScreen") == 0 ||
+							strcmp(name, "NVT_ts") == 0 ||
 							strcmp(name, "synaptics_dsx") == 0)
 						break;
 				}
