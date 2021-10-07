@@ -62,9 +62,6 @@ on fs
 on post-fs
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
-    
-    # Stop service
-    stop vendor.sensors
 
 on late-fs
     wait_for_prop hwservicemanager.ready true
@@ -74,6 +71,10 @@ on late-fs
 on post-fs-data
     mkdir /vendor/data/tombstones 0771 system system
     mkdir /data/vendor/tloc 0700 system drmrpc
+
+#Turbo sched
+    chmod 0666 /sys/module/migt/parameters/mi_viptask
+    restorecon /sys/module/migt/parameters/mi_viptask
 
 #xiong porting
 # jiangxueqin To create thermal and config directories, you must first create thermal and then create config
@@ -85,6 +86,7 @@ on post-fs-data
     chmod 0777 /vendor/bin/scancode_bin
 
 on early-boot
+    start vendor.sensors
 
 on boot
 # wuzhisen change Define cpu set for audio app. This is to optimize
@@ -149,6 +151,9 @@ on boot
     #cdfinger
     chown system system /dev/fpsdev0
     chmod 0777 /dev/fpsdev0
+
+    #silead
+    mkdir /data/system/silead 0770 system system
 
 #add dual
     mkdir /data/bin/
@@ -250,11 +255,12 @@ service closead /system/vendor/bin/displayf_bin s 0
     group root system graphics
     oneshot
     disabled
-    
+
 #add display by hanwenhao
 service displayfeature /system/bin/displayfeature
     class hal
     user root
+    interface vendor.xiaomi.hardware.displayfeature@1.0::IDisplayFeature default
     group system root
     oneshot
 
@@ -272,7 +278,7 @@ service PcbaConfigSet /system/vendor/bin/PcbaConfigSet
     group root system vendor_qti_diag
     oneshot
     seclabel u:r:PcbaConfigSet:s0
-    
+
 on boot
     start PcbaConfigSet
 
@@ -398,11 +404,17 @@ on boot
     #add ini
     chmod 0777 /proc/android_touch/self_test
     chmod 0777 /vendor/etc/focal/focaltech_mp_fw_huaxing.ini
+    chmod 0777 /vendor/etc/focal/Conf_MultipleTest_FT8720M-01.ini
     chown system system /vendor/etc/focal/focaltech_mp_fw_huaxing.ini
+    chown system system /vendor/etc/focal/Conf_MultipleTest_FT8720M-01.ini
     mkdir /data/vendor/focaltech
     copy /vendor/etc/focal/focaltech_mp_fw_huaxing.ini /data/vendor/focaltech/focaltech_mp_fw_huaxing.ini
+    copy /vendor/etc/focal/Conf_MultipleTest_FT8720M-01.ini /data/vendor/focaltech/Conf_MultipleTest_FT8720M-01.ini
     chown system system /data/vendor/focaltech/focaltech_mp_fw_huaxing.ini
+    chown system system /data/vendor/focaltech/Conf_MultipleTest_FT8720M-01.ini
     chmod 0777 /data/vendor/focaltech/focaltech_mp_fw_huaxing.ini
+    chmod 0777 /data/vendor/focaltech/Conf_MultipleTest_FT8720M-01.ini
+
     #xiong add
     chmod 0777 /sys/class/power_supply/battery/input_suspend
     chmod 0777 /sys/class/power_supply/battery/constant_charge_current_max
@@ -441,42 +453,3 @@ service checknv /system/bin/checknv
     group root system
     oneshot
     seclabel u:r:checknv:s0
-
-# Logcat Services
-service boot_log /system/bin/logcat -b all -D -f /cache/boot_log_full.txt
-    class main
-    user root
-    group root system
-    disabled
-    oneshot
-
-service boot_log_crash /system/bin/logcat -b crash -D -f /cache/boot_log_crash.txt
-    class main
-    user root
-    group root system
-    disabled
-    oneshot
-
-service boot_log_kernel /system/bin/logcat -b kernel -D -f /cache/boot_log_kernel.txt
-    class main
-    user root
-    group root system
-    disabled
-    oneshot
-
-on post-fs-data
-# Clear existing log and start the service
-    rm /cache/boot_log_full.txt
-    rm /cache/boot_log_crash.txt
-    rm /cache/boot_log_kernel.txt
-    start boot_log
-    start boot_log_crash
-    start boot_log_kernel
-
-on property:sys.boot_completed=1
-# Stop the logger service
-    stop boot_log
-    stop boot_log_crash
-    stop boot_log_kernel
-# Force disable hw overlays to be true
-    exec - root -- /system/bin/sh -c "service call SurfaceFlinger 1008 i32 1"
